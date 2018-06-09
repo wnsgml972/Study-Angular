@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let cust of customers"
+     [class.selected]="cust === selectedCustomer" (click)="onSelect(cust)">
+     <!-- cust == selectedCustomer가 true면 css 및 selected 적용된다. -->
+      <h4>{{cust.id}} - {{cust.firstName}} {{cust.lastName}}</h4> 
+  </li>
+</ul>
+
+<app-customer-details [customer]="selectedCustomer"> </app-customer-details>
